@@ -63,15 +63,6 @@ const Create = () => {
             </div>
           </div>
           <div className="menu">
-            <div className="item">
-              <h2>Publish</h2>
-              <span><b>Status: </b>Draft</span>
-              <span><b>Visibility: </b>Public</span>
-              <div className="buttons">
-                <button>Save as Draft</button>
-                {state ? <button onClick={handleSubmit}>Update</button> : <button onClick={handleSubmit}>Publish</button>}
-              </div>
-            </div>
             <div className="item i-2">
               <h2>Category</h2>
               <div className="category">
@@ -94,9 +85,14 @@ const Create = () => {
                 <input type="radio" name="cat" value="cinema" id="cinema" checked={cat === 'cinema'} onChange={(e) => setCat(e.target.value)} />
                 <label htmlFor="cinema">Cinema</label>
               </div>
-              <div className="category">
-                <input type="radio" name="cat" value="world" id="world" checked={cat === 'world'} onChange={(e) => setCat(e.target.value)} />
-                <label htmlFor="world">World</label>
+            </div>
+            <div className="item">
+              <h2>Publish</h2>
+              <span><b>Status: </b>Draft</span>
+              <span><b>Visibility: </b>Public</span>
+              <div className="buttons">
+                <button>Save as Draft</button>
+                {state ? <button onClick={handleSubmit}>Update</button> : <button onClick={handleSubmit}>Publish</button>}
               </div>
             </div>
           </div>

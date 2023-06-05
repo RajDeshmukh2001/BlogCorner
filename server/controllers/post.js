@@ -14,7 +14,7 @@ export const getPosts = (req, res) => {
 
 // Get a Single Blog
 export const getPost = (req, res) => {
-    const query = 'SELECT b.id, `fullname`, `username`, `title`, `description`, b.img, u.img AS userImg, `cat`, `date` FROM user u JOIN blogs b ON u.id=b.uid WHERE b.id = ?';
+    const query = 'SELECT b.id, `fullname`, `username`, `title`, `description`, `img`, `cat`, `date` FROM user u JOIN blogs b ON u.id=b.uid WHERE b.id = ?';
 
     db.query(query, [req.params.id], (err, data) => {
         if (err) return res.json(err);
