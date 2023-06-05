@@ -29,113 +29,120 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 60%;
-                border-radius: 15px;
+                flex-direction: column;
+                width: 50%;
                 box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
-                i {
-                    position: absolute;
-                    top: 17%;
-                    right: 21%;
-                    font-size: 25px;
-                    color: #fff;
-                    background: teal;
-                    border: 1.5px solid teal;
-                    border-radius: 50%;
-                    padding: 6px 9px;
-                    cursor: pointer;
+                .close-btn {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
 
-                    &:hover {
-                        color: teal;
-                        background: #fff;
+                    i {
+                        font-size: 20px;
+                        margin: 15px;
+                        padding: 6px 9px;
+                        color: #fff;
+                        background: teal;
+                        border: 1.5px solid teal;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: teal;
+                            background: #fff;
+                        }
                     }
                 }
 
-                .l-left {
-                    flex: 1;
-                    padding: 2rem;
-                    background: #fff;
+                .form-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-                    h1 {
-                        font-size: 2.5rem;
-                        font-weight: 600;
-                        color: teal;
-                        padding: 10px 0;
-                    }
+                    .l-left {
+                        flex: 1;
+                        padding: 2rem;
+                        padding-top: 0;
+                        background: #fff;
 
-                    form {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1.5rem;
-                        margin-top: 2rem;
-
-                        input {
-                            font-size: 18px;
-                            padding: 6px 10px;
-                            padding-bottom: 8px;
-                            outline: none;
-                            border: none;
-                            border-bottom: 1.5px solid #666;
-
-                            &:is(:focus) {
-                                border-bottom: 1.5px solid teal;
-                            }
+                        h1 {
+                            font-size: 2rem;
+                            font-weight: 600;
+                            color: teal;
+                            padding: 10px 0;
                         }
 
-                        button {
-                            padding: 6px 10px;
-                            font-size: 22px;
-                            font-weight: 500;
-                            background: teal;
-                            color: #fff;
-                            border-radius: 25px;
-                            border: 1.5px solid teal;
-                            outline: none;
-                            margin-top: 1.5rem;
+                        form {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1.5rem;
+                            margin-top: 1rem;
 
-                            &:hover {
-                                background: #fff;
-                                color: teal;
-                                cursor: pointer;
+                            input {
+                                font-size: 15px;
+                                padding: 6px 10px;
+                                padding-bottom: 8px;
+                                outline: none;
+                                border: none;
+                                border-bottom: 1.5px solid #666;
+
+                                &:is(:focus) {
+                                    border-bottom: 1.5px solid teal;
+                                }
                             }
-                        }
 
-                        span {
-                            letter-spacing: .5px;
-
-                            .r-btn {
+                            button {
+                                padding: 6px 10px;
+                                font-size: 18px;
                                 font-weight: 500;
-                                color: #222;
-                                text-decoration: none;
+                                background: teal;
+                                color: #fff;
+                                border-radius: 25px;
+                                border: 1.5px solid teal;
+                                outline: none;
+                                margin-top: 1.5rem;
 
                                 &:hover {
+                                    background: #fff;
                                     color: teal;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            span {
+                                font-size: 15px;
+                                letter-spacing: .5px;
+
+                                .r-btn {
+                                    font-weight: 500;
+                                    color: #222;
+                                    text-decoration: none;
+
+                                    &:hover {
+                                        color: teal;
+                                    }
                                 }
                             }
                         }
                     }
-                }
 
-                .l-right {
-                    flex: 1;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    .l-right {
+                        flex: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
 
-                    img {
-                        width: 100%;
+                        img {
+                            width: 100%;
+                        }
                     }
                 }
             }
 
             .register {
-                width: 70%;
+                width: 50%;
                 margin-top: 4rem;
-
-                #cross {
-                    top: 8%;
-                    right: 16%;
-                }
             }
         }
 
@@ -149,7 +156,7 @@
                 justify-content: space-around;
                 align-items: center;
 
-                i{
+                i {
                     visibility: hidden;
                 }
 
@@ -654,65 +661,65 @@
                 height: 100vh;
 
                 .login {
-                    flex-direction: column-reverse;
+                    flex-direction: column;
                     width: 80%;
 
-                    i {
-                        top: 14%;
-                        right: 14%;
-                        font-size: 12px;
-                        padding: 4px 5px;
+                    .close-btn {
+
+                        i {
+                            font-size: 12px;
+                            padding: 4px 5px;
+                        }
                     }
 
-                    .l-left {
-                        padding: 1.5rem;
+                    .form-content {
+                        flex-direction: column-reverse;
 
-                        h1 {
-                            font-size: 18px;
-                            padding: 10px 0;
-                        }
+                        .l-left {
+                            padding: 0;
+                            padding-bottom: 2rem;
 
-                        form {
-                            gap: 1.2rem;
-                            margin-top: 1rem;
-
-                            input {
-                                font-size: 12px;
+                            h1 {
+                                font-size: 18px;
+                                padding: 0;
                             }
 
-                            button {
-                                padding: 8px 10px;
-                                font-size: 12px;
-                                border-radius: 2px;
+                            form {
+                                gap: 1.2rem;
                                 margin-top: 1rem;
-                            }
 
-                            span {
-                                font-size: 12px;
+                                input {
+                                    font-size: 12px;
+                                    padding: 6px 0;
+                                }
+
+                                button {
+                                    padding: 8px 10px;
+                                    font-size: 12px;
+                                    border-radius: 2px;
+                                    margin-top: 1rem;
+                                }
+
+                                span {
+                                    font-size: 12px;
+                                }
                             }
                         }
-                    }
 
-                    .l-right {
-
-                        img {
-                            width: 60%;
+                        .l-right {
+                            display: none;
                         }
                     }
                 }
 
                 .register {
                     width: 80%;
-                    height: 76%;
                     margin-top: 0;
 
-                    .l-right {
-                        display: none;
-                    }
-
-                    #cross {
-                        top: 15%;
-                        right: 15%;
+                    .form-content {
+                        .l-right {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -737,13 +744,13 @@
                         }
                     }
 
-                    i{
+                    i {
                         visibility: visible;
                         font-size: 20px;
                         color: #fff;
                     }
 
-                    .links{
+                    .links {
                         display: none;
                     }
 

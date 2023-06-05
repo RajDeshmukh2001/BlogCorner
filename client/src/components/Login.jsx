@@ -42,18 +42,20 @@ const Login = () => {
     <>
       <div className="auth">
         <div className="login">
-          <Link to='/'><i className="fa fa-times"></i></Link>
-          <div className="l-left">
-            <h1>Login</h1>
-            <form method='POST'>
-              <input type="text" name='username' placeholder='Username' onChange={handleChange} required />
-              <input type="password" name='password' placeholder='Password' onChange={handleChange} required />
-              <button onClick={handleSubmit}>Login</button>
-              <span>Not a member? <Link to="/register" className='r-btn'>Register Here</Link></span>
-            </form>
-          </div>
-          <div className="l-right">
-            <img src={LoginImg} alt="LoginImage" />
+          <div className="close-btn"><Link to='/'><i className="fa fa-times"></i></Link></div>
+          <div className="form-content">
+            <div className="l-left">
+              <h1>Login</h1>
+              <form method='POST'>
+                <input type="text" name='username' placeholder='Username' onChange={handleChange} required />
+                <input type="password" name='password' placeholder='Password' onChange={handleChange} required />
+                <button onClick={handleSubmit}>Login</button>
+                <span>Not a member? <Link to="/register" className='r-btn'>Register Here</Link></span>
+              </form>
+            </div>
+            <div className="l-right">
+              <img src={LoginImg} alt="LoginImage" />
+            </div>
           </div>
         </div>
       </div>
