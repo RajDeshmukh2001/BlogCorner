@@ -1,6 +1,6 @@
 import mysql from 'mysql2';
 
-const urlDB = `mysql://root:bhVatF8dN4WJ4I2IBIpi@containers-us-west-62.railway.app:5887/railway`;
+const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLPASSWORD}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`;
 
 const db = mysql.createConnection(urlDB);
 

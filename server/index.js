@@ -29,7 +29,7 @@ app.use('/server/posts', postRoutes);
 app.use('/server/auth', authRoutes);
 app.use('/server/users', userRoutes);
 
-app.listen(5887, () => {
+app.listen(process.env.PORT, () => {
     console.log('Connected');
 });
 
