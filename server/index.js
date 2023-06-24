@@ -30,7 +30,7 @@ app.use('/server/auth', authRoutes);
 app.use('/server/users', userRoutes);
 
 app.listen(process.env.PORT, () => {
-    console.log('Connected');
+    console.log(`Connected to ${process.env.PORT}`);
 });
 
 // Database Connection
