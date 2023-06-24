@@ -29,12 +29,12 @@ const Create = () => {
 
     const imgUrl = await uploadImage();
     try {
-      state ? await axios.put(`${process.env.REACT_APP_DOMAIN}/posts/${state.id}`, {
+      state ? await axios.put(`/posts/${state.id}`, {
         title,
         img: file ? imgUrl: '',
         description: value,
         cat,
-      }) : await axios.post(`${process.env.REACT_APP_DOMAIN}/posts/`, {
+      }) : await axios.post(`/posts/`, {
         title,
         img: file ? imgUrl: '',
         description: value,

@@ -25,7 +25,7 @@ const Login = () => {
 
     try {
       await login(inputs);
-      const res = await axios.post(`${process.env.REACT_APP_DOMAIN}/auth/login`, inputs);
+      const res = await axios.post(`/auth/login`, inputs);
       if (res) {
         alert('Login Successful');
         navigate('/');
