@@ -29,7 +29,7 @@ app.use('/server/posts', postRoutes);
 app.use('/server/auth', authRoutes);
 app.use('/server/users', userRoutes);
 
-app.listen(5000, () => {
+app.listen(5887, () => {
     console.log('Connected');
 });
 
