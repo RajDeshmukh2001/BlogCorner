@@ -11,7 +11,7 @@ const Profile = () => {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const res = await axios.get(`/users/${userId}`);
+            const res = await axios.get(`${process.env.REACT_APP_DOMAIN}/users/${userId}`);
             setUser(res.data);
           } catch (error) {
             console.log(error);

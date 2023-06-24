@@ -15,7 +15,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/${blogId}`);
+        const res = await axios.get(`${process.env.REACT_APP_DOMAIN}/posts/${blogId}`);
         setPost(res.data);
       } catch (error) {
         console.log(error);
@@ -26,7 +26,7 @@ const Blog = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${blogId}`);
+      await axios.delete(`${process.env.REACT_APP_DOMAIN}/posts/${blogId}`);
       navigate('/');
     } catch (error) {
       console.log(error);
