@@ -16,11 +16,11 @@ export const register = (req, res) => {
     const query = 'SELECT * FROM user WHERE email = ? OR username = ?';
     db.query(query, [email, username], (err, data) => {
         if (err) {
-            return res.json(err);
+            return res.status(500).json(err);
         }
 
         if (data.length) {
-            return res.status(422).json('Email or Username already exists');
+            return res.status(409).json('User already exists');
         }
 
         // Hashing Password
@@ -32,7 +32,7 @@ export const register = (req, res) => {
         const values = [fullname, username, email, hash, cpass]
         db.query(query, [values], (err, data) => {
             if (err) {
-                return res.json(err);
+                return res.status(500).json(err);
             }
             return res.status(200).json('Registration Successfull');
         });
@@ -49,11 +49,11 @@ export const login = (req, res) => {
     const query = 'SELECT * FROM user WHERE username = ?';
     db.query(query, [username], (err, data) => {
         if (err) {
-            return res.json(err);
+            return res.status(500).json(err);
         }
 
         if (data.length === 0) {
-            return res.status(400).json('User not found');
+            return res.status(404).json('User not found');
         }
 
         // Verify Password

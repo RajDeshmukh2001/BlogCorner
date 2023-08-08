@@ -1,7 +1,10 @@
-import mysql from 'mysql2';
+import mysql from 'mysql';
 
-const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}/${process.env.MYSQLDATABASE}`;
-
-const db = mysql.createConnection(urlDB);
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'myblog'
+});
 
 export default db;

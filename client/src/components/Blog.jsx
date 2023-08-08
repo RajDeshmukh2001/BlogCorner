@@ -4,6 +4,7 @@ import { AuthContext } from '../context/Context';
 import Aside from './Aside';
 import axios from 'axios';
 import moment from 'moment';
+import DOMPurify from 'dompurify';
 
 const Blog = () => {
   const navigate = useNavigate();
@@ -26,16 +27,11 @@ const Blog = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`posts/${blogId}`);
+      await axios.delete(`/posts/${blogId}`);
       navigate('/');
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const getText = (html) => {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.body.textContent;
   };
 
   return (
@@ -43,6 +39,7 @@ const Blog = () => {
       <div className="blog">
         <div className="b-content">
           <main>
+            <h1>{post.title}</h1>
             <img src={`../upload/${post?.img}`} alt="" />
             <div className="user">
               {post.userImg && <img src={post.userImg} alt="" />}
@@ -58,8 +55,7 @@ const Blog = () => {
                 )
               }
             </div>
-            <h1>{post.title}</h1>
-            <p>{getText(post.description)}</p>
+            <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.description),}}></p>
           </main>
           <aside>
             <Aside cat={post.cat} />

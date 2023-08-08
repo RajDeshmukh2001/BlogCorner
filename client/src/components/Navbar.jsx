@@ -41,7 +41,12 @@ const Navbar = () => {
           <div className="logo">
             <Link to='/' className='logoName'>Blog<span>C</span>orner</Link>
           </div>
-          <i className="fa fa-bars" onClick={ () => setToggleMenu(!toggleMenu) }></i>
+          {
+            toggleMenu === true ? 
+            <i class="fa fa-times" onClick={ () => setToggleMenu(!toggleMenu) }></i> : 
+            <i className="fa fa-bars" onClick={ () => setToggleMenu(!toggleMenu) }></i>
+          }
+          
           <div className= {toggleMenu ? "links hamburger-menu" : "links" }>
             <RenderMenu />
           </div>

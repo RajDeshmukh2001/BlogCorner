@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Aside = ({cat}) => {
     const [posts, setPosts] = useState([]);
+    
     useEffect(() => {
         const fetchData = async () => {
           try {

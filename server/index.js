@@ -7,13 +7,13 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 
 const app = express();
-app.use(cookieParser());
 app.use(express.json());
+app.use(cookieParser());
 
 // upload Image
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '../client/public/upload/');
+        cb(null, '../client/public/upload');
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + file.originalname);
@@ -29,8 +29,8 @@ app.use('/server/posts', postRoutes);
 app.use('/server/auth', authRoutes);
 app.use('/server/users', userRoutes);
 
-app.listen(process.env.PORT, () => {
-    console.log(`Connected to ${process.env.PORT}`);
+app.listen(5000, () => {
+    console.log(`Connected to 5000`);
 });
 
 // Database Connection

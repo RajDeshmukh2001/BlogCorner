@@ -6,7 +6,7 @@ export const getPosts = (req, res) => {
     const query = req.query.cat ? 'SELECT * FROM blogs WHERE cat = ?' : 'SELECT * FROM blogs';
 
     db.query(query, [req.query.cat], (err, data) => {
-        if (err) return res.json(err);
+        if (err) return res.status(500).json(err);
 
         return res.status(200).json(data);
     })
@@ -17,7 +17,7 @@ export const getPost = (req, res) => {
     const query = 'SELECT b.id, `fullname`, `username`, `title`, `description`, `img`, `cat`, `date` FROM user u JOIN blogs b ON u.id=b.uid WHERE b.id = ?';
 
     db.query(query, [req.params.id], (err, data) => {
-        if (err) return res.json(err);
+        if (err) return res.status(500).json(err);
 
         return res.status(200).json(data[0]);
     })
@@ -36,7 +36,7 @@ export const addPost = (req, res) => {
         const values = [title, description, img, cat, date, userInfo.id];
 
         db.query(query, [values], (err, data) => {
-            if (err) return res.json(err);
+            if (err) return res.status(500).json(err);
             return res.status(200).json('Blog Posted');
         });
     });
@@ -56,7 +56,7 @@ export const updatePost = (req, res) => {
         const values = [title, description, img, cat];
 
         db.query(query, [...values, blogId, userInfo.id], (err, data) => {
-            if (err) return res.json(err);
+            if (err) return res.status(500).json(err);
             return res.status(200).json('Blog Updated');
         });
     });
